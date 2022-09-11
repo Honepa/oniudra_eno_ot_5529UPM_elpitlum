@@ -82,20 +82,21 @@ void read_data_from_mpu(uint8_t number_of_mpu)
 
   // Accelerometer
   Serial.print(ax, DEC);
-  Serial.print("t");
+  Serial.print(" t ");
   Serial.print(ay, DEC);
-  Serial.print("t");
+  Serial.print(" t ");
   Serial.print(az, DEC);
-  Serial.print("t");
+  Serial.print(" t ");
 
   // Gyroscope
   Serial.print(gx, DEC);
-  Serial.print("t");
+  Serial.print(" t ");
   Serial.print(gy, DEC);
-  Serial.print("t");
+  Serial.print(" t ");
   Serial.print(gz, DEC);
-  Serial.print("t");
+  Serial.print(" t ");
   // Read register Status 1 and wait for the DRDY: Data Ready
+	/*
   uint8_t ST1;
   do
   {
@@ -116,7 +117,7 @@ void read_data_from_mpu(uint8_t number_of_mpu)
   Serial.print("t");
   Serial.print(mz - 700, DEC);
   Serial.print("t");
-
+*/
   Serial.println("");
 }
 
@@ -132,7 +133,7 @@ void setup()
 
 void loop()
 {
-  Serial.print("ppppp");
+  Serial.println("ppppp");
   read_data_from_mpu(mpu_first);
   read_data_from_mpu(mpu_second);
   read_data_from_mpu(mpu_third);
